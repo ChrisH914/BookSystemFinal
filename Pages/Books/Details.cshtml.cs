@@ -27,12 +27,14 @@ namespace BookSystemFinal.Pages_Books
                 return NotFound();
             }
 
-            var book = await _context.Books.FirstOrDefaultAsync(m => m.BookID == id);
+            // Include Borrower details when retrieving the Book entity
+            var book = await _context.Books
+                .Include(b => b.Borrower) // Eagerly load the related Borrower entity
+                .FirstOrDefaultAsync(m => m.BookID == id);
 
             if (book is not null)
             {
                 Book = book;
-
                 return Page();
             }
 

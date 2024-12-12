@@ -35,14 +35,43 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Book.IsCheckedOut)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Book.Borrower)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Book.Borrower.Email)
-        </dd>
+
+        @if (Model.Book.Borrower != null)
+        {
+            <h4>Borrower Information</h4>
+            <dt class="col-sm-2">
+                Name
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Book.Borrower.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Book.Borrower.Email)
+            </dd>
+            <dt class="col-sm-2">
+                Phone
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Book.Borrower.Phone)
+            </dd>
+            <dt class="col-sm-2">
+                Address
+            </dt>
+            <dd class="col-sm-10">
+                <em>Address not available</em>
+            </dd>
+        }
+        else
+        {
+            <h4>Borrower Information</h4>
+            <p><em>This book is not currently checked out.</em></p>
+        }
     </dl>
 </div>
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Book.BookID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
