@@ -11,19 +11,14 @@ namespace BookSystemFinal.Pages_Books
 {
     public class IndexModel : PageModel
     {
-        private readonly ADV_Business_Final_Project.Models.LibraryContext _context;
+        private readonly LibraryContext _context;
 
-        public IndexModel(ADV_Business_Final_Project.Models.LibraryContext context)
+        public IndexModel(LibraryContext context)
         {
             _context = context;
         }
 
-        public IList<Book> Book { get;set; } = default!;
+        public IList<Book> Book { get; set; } = default!;
 
-        public async Task OnGetAsync()
-        {
-            Book = await _context.Books
-                .Include(b => b.Borrower).ToListAsync();
-        }
     }
 }

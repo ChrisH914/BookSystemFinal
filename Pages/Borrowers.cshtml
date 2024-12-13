@@ -1,0 +1,22 @@
+@page
+@model ADV_Business_Final_Project.Pages.BorrowersModel
+
+<h1>Borrowers List</h1>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var borrower in Model.Borrowers)
+        {
+            <tr>
+                <td>@borrower.Name</td>
+                <td>@borrower.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

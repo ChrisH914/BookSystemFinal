@@ -1,10 +1,70 @@
 ﻿@page
+@using ADV_Business_Final_Project.Pages
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+
+    <!-- Carousel Section -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/img/Narnia.jpg" class="d-block w-100 carousel-img" alt="Book Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/Chemist.jpg" class="d-block w-100 carousel-img" alt="Book Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/Night.jpg" class="d-block w-100 carousel-img" alt="Book Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/Rye.jpg" class="d-block w-100 carousel-img" alt="Book Image 4">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Library Description Section -->
+    <div class="mt-5 text-center">
+        <h2>Welcome to the Library System</h2>
+        <p>
+            Our library system offers an extensive collection of books, allowing you to explore various genres, authors, and titles. 
+            It provides a seamless experience for browsing books, checking availability, and keeping track of your borrowings.
+            This system was designed for CIDM 3312 for the Final Project Assignment.
+        </p>
+        <p>
+            Whether you're an avid reader or just looking for a new book to dive into, our library offers resources that cater to all interests and age groups.
+        </p>
+        <p class="fw-bold">Creator: Christopher Herrera</p>
+    </div>
+
 </div>
+
+<style>
+    /* Custom Carousel Image Size for Book Covers */
+    .carousel-img {
+        height: 300px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    /* Center the Carousel */
+    .carousel {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+
+    /* Change Background Color of the Page */
+    body {
+        background-color: #f0f0f0;
+    }
+</style>
